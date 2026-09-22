@@ -130,7 +130,7 @@ The complete source is published under the Mozilla Public License 2.0, together 
 ## Links: what TradingView allows (verified vs House Rules, 2026-07-30)
 
 - **External links/references are BANNED in descriptions, release notes, comments, and code** — the promotion rule names "links or references to any website" across "all types of publications and updates … script release notes." No open-source or GitHub carve-out exists. This is why the description above contains no URLs.
-- **The Signature field (Premium+) is the sanctioned home**: it renders under every script and idea. BEFORE publishing, set the signature to carry both links, e.g. `TheStratSuite.com · github.com/natebking/345-strategies`, and put them on the profile About page too.
+- **The Signature field (Premium+) is the sanctioned home**: it renders under every script and idea. BEFORE publishing, set the signature to carry both links, e.g. `TheStratSuite.com · github.com/natebking/thestrat-suite`, and put them on the profile About page too.
 - **TV-internal references are safe by name**: "search 'TheStrat Suite' (open-source) on my profile @SpinTrades." Use this form in release notes instead of URLs.
 - Exception that stays: the invite-only **Author's Instructions** field is designed for a vendor access link (the current "Get Access: TheStratSuite.com" has lived there unmoderated) — fine to keep using it for the legacy signpost.
 

@@ -1,10 +1,10 @@
-# 345 Strategies
+# TheStrat Suite
 
-Open-source price-action trading tools for TradingView, built and maintained by 345 Strategies. The flagship is **TheStrat Suite**; sibling tools and research tracks live alongside it.
+Free, open-source multi-timeframe price-action indicator for TradingView (Pine Script v6), implementing Rob Smith's TheStrat methodology. Built and maintained by **345 Strategies**; sibling tools and research tracks live in this repo alongside it.
 
 **What counts as "TheStrat Suite":** whatever ships inside the one TheStrat Suite indicator script on TradingView. Tools that ship as their own scripts are siblings under this roof with their own names — if one later merges into the indicator, it joins the Suite. Distribution decides, not methodology.
 
-## TheStrat Suite — flagship indicator
+## The indicator
 
 Multi-timeframe price action indicator (Pine Script v6), implementing Rob Smith's TheStrat methodology. Six configurable timeframes on one chart: bar classification, signal detection with magnitude and exhaustion targets, Full Timeframe Continuity, stop levels, Domino detection, consolidated alerts, and a live multi-timeframe data table.
 

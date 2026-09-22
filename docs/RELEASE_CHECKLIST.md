@@ -19,7 +19,7 @@ The repo is currently **private**. This is everything between here and flipping 
 - [ ] **Git history call.** The pre-rewrite README (with "private archive / Confidential" wording) and the removed local paths remain visible in commit history. Low risk — nothing sensitive beyond framing and a home-directory path — but it's your name on it. Options: accept as-is (recommended; rewriting history is churn for no real gain) or squash-recreate the repo before flipping.
 - [ ] **Flip visibility**: GitHub → Settings → Danger Zone → Change visibility → Public.
 - [ ] **After the flip**: add topics (`pine-script`, `tradingview`, `thestrat`, `trading`, `indicator`) so it's findable.
-- [ ] **After the flip**: publish the canonical URL `github.com/natebking/345-strategies` anywhere you link the repo (thestratsuite.com, TV listings). The old `thestratsuite` URL redirects, but don't rely on it in public copy.
+- [ ] **After the flip**: publish the canonical URL `github.com/natebking/thestrat-suite` anywhere you link the repo (thestratsuite.com, TV listings). The older `thestratsuite` and `345-strategies` URLs both redirect, but don't rely on either in public copy.
 - [ ] **TradingView open-source migration** (verified against TV docs 2026-07-30: a published script's privacy/visibility are PERMANENT — update dialog greys them out; no conversion path exists):
   - [ ] Flip this repo public first, so the TV description's GitHub link resolves.
   - [ ] Publish v3.0.0 as a NEW publication: Privacy = Public, Visibility = Open. TV applies MPL-2.0 to open scripts by default — matches this repo's license automatically.
