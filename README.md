@@ -64,6 +64,13 @@ The rendering layer with everything Strat-specific removed: update-in-place line
 boxes, a label pool, and price-based label consolidation. Published as a Pine library for
 anyone building their own script.
 
+### `thinkorswim/` — TheStrat Suite Lite (thinkScript)
+
+A scoped port of the Suite to thinkorswim: the classifier, Strat/FTFC bar coloring, a
+per-timeframe label strip and FTFC, with signals and levels to follow. Free under MPL-2.0.
+Its classifier is tested against the grammar by `grammar/tests/test_tos_parity.py`. Not yet
+verified in thinkorswim. See `thinkorswim/README.md`.
+
 ### `cross-levels/` — ES ↔ SPY/SPX level translation (Pine v6)
 
 A standalone overlay that converts price levels between ES futures and the cash market
