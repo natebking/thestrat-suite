@@ -1,9 +1,11 @@
-# TheStrat Suite Lite for thinkorswim
+# TheStrat Suite for thinkorswim
 
-A thinkScript port of TheStrat Suite v3.1.1, scoped to what thinkorswim can draw natively.
-Free and open source under MPL-2.0, like the Pine original.
+A thinkScript port of TheStrat Suite v3.1.1. Free and open source under MPL-2.0, like the Pine
+original. The goal is a **full port** of every Suite feature; `FULL_PORT_PLAN.md` maps each one
+to a thinkScript approach, lists the hard platform limits and their equivalents, and sets the
+build order. The study shipped today is layer 1 of that plan (named "Lite" while it is partial).
 
-**Status: v0.1.0, layer 1 of 3. Not yet loaded in thinkorswim.** The classifier is checked
+**Status: v0.1.0, layer 1. Not yet loaded in thinkorswim.** The classifier is checked
 against the grammar by a Python test (below); everything else still needs the in-app
 verification pass at the bottom of this file.
 
@@ -14,20 +16,14 @@ verification pass at the bottom of this file.
    `TheStratSuite_Lite_TOS_v0.1.0.txt`.
 3. OK → Apply. Pick a preset in the study's settings; colors are under the Globals tab.
 
-## What "Lite" means
+## Roadmap
 
-Everything that runs off the same classifier on each timeframe and fits thinkorswim's drawing
-primitives. The scope is frozen so the port stays cheap to keep in sync with the Pine.
+Layer 1 (this version): classifier (1u/1d, 2u/2d, F2u/F2d, 3u/3d), Strat Candles and FTFC Candles
+bar coloring, timeframe label strip, FTFC label, the six Suite presets.
 
-| Layer | Contents | Status |
-|---|---|---|
-| 1 | Classifier (1u/1d, 2u/2d, F2u/F2d, 3u/3d), Strat Candles and FTFC Candles bar coloring, timeframe label strip, FTFC label, the six Suite presets | **this version** |
-| 2 | Signal combo bubbles (Inside Reversals, 2-2 Reversals, Inside Continuations; Failing 2s and the off-by-default signals as options), hammer/shooter filter | next |
-| 3 | Trigger lines and magnitude targets for the chart timeframe plus the two nearest higher timeframes, chart-timeframe alerts | after 2 |
-
-Not planned for Lite: exhaustion targets (pivot scan is slow without arrays; first add-on after
-Lite), stops, Take Action Windows, Lead filter, Domino, Universal labels, full table mode,
-debug panel, preview mode.
+Layers 2 to 12 (probes and a code generator, HTF data core, detection engine and debug panel,
+table, targets, levels and labels, stops and Take Action Windows, F2 flip highlight, preview,
+alerts, packaging) are laid out in `FULL_PORT_PLAN.md`.
 
 ## How it differs from the Suite on TradingView
 
@@ -35,6 +31,12 @@ debug panel, preview mode.
   below the chart timeframe, so a lower slot is clamped, shown gray, and left out of FTFC. The
   Suite also grays these cells.
 - **No 12H.** thinkorswim has no 12-hour aggregation. The Futures/Crypto preset runs 1H, 4H, D, W.
+  The full port synthesizes 12H from chart bars (see `FULL_PORT_PLAN.md`).
+- **Futures 4H is likely misaligned in v0.1.0.** thinkorswim appears to anchor time bars at
+  midnight CT, so its native 4H on futures would run 10P/2A/6A/10A/2P/6P PT (01/05/09/13/17/21 ET)
+  instead of the Suite's 3P/7P/11P/3A/7A/11A PT (18/22/02/06/10/14 ET). This affects the Day Trade
+  and Futures/Crypto presets on futures. The checklist item below confirms it; the full port builds
+  futures 4H from chart bars.
 - **Label strip instead of a table.** One colored label per enabled timeframe, highest first,
   reading `<TF> <current candle>`, then the FTFC label. It follows the Compact table's Bar State
   coloring.
