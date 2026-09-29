@@ -47,7 +47,7 @@ The indicator loads its own higher-timeframe data. Monthly and longer slots need
 
 ## Check in NinjaTrader before publishing
 
-These could not be tested on Linux. Most are one look at a chart. Compare against the TradingView Suite on the same symbol and preset, for example ES 5-minute with TheStrat Classic.
+These could not be tested on Linux. Most are one look at a chart. On a Mac, `TESTING_ON_MAC.md` covers getting Windows, data and Market Replay set up, and groups these checks into test sessions. Compare against the TradingView Suite on the same symbol and preset, for example ES 5-minute with TheStrat Classic.
 
 1. **Import and compile.** The zip imports with no compile errors. If NinjaTrader rejects `Info.xml`, export any script from your install and copy its version line into `build_zip.py`.
 2. **Higher-timeframe data.** Every enabled slot fills its table row. On a futures ETH chart, try the default (blank) and your ETH template in **HTF Trading Hours**.
